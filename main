@@ -1,4 +1,4 @@
-package com.example.uc5;
+package com.example.uc6;
 
 public class HelloUsers {
 
@@ -10,24 +10,19 @@ public class HelloUsers {
             return;
         }
 
-        // Using enhanced for-loop
+        // Build string with delimiter
         StringBuilder greeting = new StringBuilder("Hello ");
 
-        int count = 0;
         for (String name : args) {
-            greeting.append(name);
-            count++;
-
-            // Formatting commas and 'and'
-            if (count < args.length - 1) {
-                greeting.append(", ");
-            } else if (count == args.length - 1) {
-                greeting.append(" and ");
-            }
+            greeting.append(name).append(", ");
         }
 
-        greeting.append("!");
+        // Remove last ", " using substring
+        String result = greeting.substring(0, greeting.length() - 2);
 
-        System.out.println(greeting.toString());
+        // Add ending
+        result += "!";
+
+        System.out.println(result);
     }
 }
