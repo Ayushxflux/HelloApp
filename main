@@ -1,1 +1,19 @@
+package com.example.uc7;
 
+public class HelloUsers {
+
+    public static void main(String[] args) {
+
+        // Default case
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
+        }
+
+        // Join all names with comma and space
+        String joinedNames = String.join(", ", args);
+
+        // Print greeting
+        System.out.println("Hello " + joinedNames + "!");
+    }
+}
