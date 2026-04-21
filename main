@@ -1,1 +1,33 @@
+package com.example.uc5;
 
+public class HelloUsers {
+
+    public static void main(String[] args) {
+
+        // Default case
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
+        }
+
+        // Using enhanced for-loop
+        StringBuilder greeting = new StringBuilder("Hello ");
+
+        int count = 0;
+        for (String name : args) {
+            greeting.append(name);
+            count++;
+
+            // Formatting commas and 'and'
+            if (count < args.length - 1) {
+                greeting.append(", ");
+            } else if (count == args.length - 1) {
+                greeting.append(" and ");
+            }
+        }
+
+        greeting.append("!");
+
+        System.out.println(greeting.toString());
+    }
+}
