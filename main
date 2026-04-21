@@ -1,1 +1,24 @@
+package com.example.tictactoe;
 
+import java.util.Scanner;
+
+public class UserInput {
+
+    // Method to get slot input from user
+    public static int getSlotInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a slot number (1-9): ");
+        int slot = scanner.nextInt();
+
+        return slot;
+    }
+
+    public static void main(String[] args) {
+        // Call method and store result
+        int chosenSlot = getSlotInput();
+
+        // Return control to game logic (for now just print)
+        System.out.println("You selected slot: " + chosenSlot);
+    }
+}
